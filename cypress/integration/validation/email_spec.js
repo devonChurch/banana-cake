@@ -7,13 +7,13 @@ describe("email field validation", () => {
     cy.visit("/contact");
   });
 
-  it("should be invalid if submitted with no email value", () => {
+  it("should be invalid if submitted with no value", () => {
     cy.get(SUBMIT_NODE).click();
 
     cy.contains(INVALID_MESSAGE);
   });
 
-  it("should be invalid if submitted with an incorrect email format", () => {
+  it("should be invalid if submitted with an incorrect format", () => {
     cy.get(EMAIL_NODE).type("test.com");
 
     cy.get(SUBMIT_NODE).click();
@@ -21,7 +21,7 @@ describe("email field validation", () => {
     cy.contains(INVALID_MESSAGE);
   });
 
-  it("should be valid if submitted with a correct email format", () => {
+  it("should be valid if submitted with a correct format", () => {
     cy.get(EMAIL_NODE).type("test@test.com");
 
     cy.get(SUBMIT_NODE).click();
