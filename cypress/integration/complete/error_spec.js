@@ -1,7 +1,9 @@
-const SUBMIT_NODE = 'button[type="submit"]';
-const NAME_NODE = 'input[name="Name"]';
-const EMAIL_NODE = 'input[name="Email"]';
-const MESSAGE_NODE = 'textarea[name="Message"]';
+import {
+  SUBMIT_NODE,
+  NAME_NODE,
+  EMAIL_NODE,
+  MESSAGE_NODE
+} from "../../helpers";
 
 describe.only("unsuccessful completion", () => {
   it("inform the users that their message has not been sent successfully", () => {

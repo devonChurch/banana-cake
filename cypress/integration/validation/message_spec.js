@@ -1,5 +1,4 @@
-const SUBMIT_NODE = 'button[type="submit"]';
-const MESSAGE_NODE = 'textarea[name="Message"]';
+import { SUBMIT_NODE, MESSAGE_NODE } from "../../helpers";
 const INVALID_MESSAGE = "Please supply a message";
 
 describe("name field validation", () => {

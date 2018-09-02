@@ -1,5 +1,4 @@
-const SUBMIT_NODE = 'button[type="submit"]';
-const NAME_NODE = 'input[name="Name"]';
+import { SUBMIT_NODE, NAME_NODE } from "../../helpers";
 const INVALID_MESSAGE = "Please supply a contact name";
 
 describe("name field validation", () => {

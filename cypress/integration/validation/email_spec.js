@@ -1,5 +1,4 @@
-const SUBMIT_NODE = 'button[type="submit"]';
-const EMAIL_NODE = 'input[name="Email"]';
+import { SUBMIT_NODE, EMAIL_NODE } from "../../helpers";
 const INVALID_MESSAGE = "A valid Email address is required";
 
 describe("email field validation", () => {
