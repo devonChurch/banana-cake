@@ -1,0 +1,23 @@
+{
+  "name": "banana-cake",
+  "version": "1.0.0",
+  "description": "A Cypress POC",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "cypress": "cypress"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/devonChurch/banana-cake.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/devonChurch/banana-cake/issues"
+  },
+  "homepage": "https://github.com/devonChurch/banana-cake#readme",
+  "devDependencies": {
+    "cypress": "^3.1.0"
+  }
+}
