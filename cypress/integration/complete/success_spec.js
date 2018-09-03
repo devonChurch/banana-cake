@@ -1,27 +1,20 @@
-import {
-  SUBMIT_NODE,
-  NAME_NODE,
-  EMAIL_NODE,
-  MESSAGE_NODE
-} from "../../helpers";
-
-describe("successful completion", () => {
-  it("inform the users that their message has been successfully sent", () => {
+describe("successful completion", function() {
+  it("inform the users that their message has been successfully sent", function() {
     // NOTE: No need to stub out this network request as we need to verify that
     // our e2e tests with our Lambdas are working correctly. Remember that adding
     // "test" to the message field will result in the dev email account being
     // pinged and not the sales team =)
     cy.visit("/contact")
-      .get(NAME_NODE)
+      .get("@nameNode")
       .type("test")
-      .get(EMAIL_NODE)
+      .get("@emailNode")
       .type("test@test.com")
-      .get(MESSAGE_NODE)
+      .get("@messageNode")
       .type("test")
-      .get(SUBMIT_NODE)
+      .get("@submitNode")
       .click();
 
     cy.contains("Great, we will be in touch soon");
-    cy.get(SUBMIT_NODE).should("to.be.disabled");
+    cy.get("@submitNode").should("to.be.disabled");
   });
 });
