@@ -5,6 +5,10 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
+    "deploy": "npm run deploy:clean && npm run deploy:build && npm run deploy:send",
+    "deploy:clean": "rm ./banana-cake.zip || echo \"no previous build to clean\"",
+    "deploy:build": "zip -r banana-cake.zip . --exclude=\"/node_modules*\"",
+    "deploy:send": "aws s3 cp ./banana-cake.zip s3://banana-cake/ --storage-class REDUCED_REDUNDANCY",
     "cypress": "cypress"
   },
   "repository": {

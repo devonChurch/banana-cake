@@ -1,0 +1,33 @@
+version: 0.2
+
+# # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #
+
+env:
+  parameter-store:
+    RECORD_KEY: "/CodeBuild/banana-cake/cypress/record-key"
+
+# # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #
+
+phases:
+  install:
+    commands:
+      - echo "install dependancies..."
+      - apt-get --yes update
+      - apt-get --yes install xvfb libgtk2.0-0 libnotify-dev libgconf-2-4 libnss3 libxss1 libasound2
+      - npm install
+    finally:
+      - echo "...installed dependancies"
+
+  post_build:
+    commands:
+      - echo "run cypress tests..."
+      - echo "-> cypress record key $RECORD_KEY"
+      - npm run cypress run -- --record --key $RECORD_KEY
+    finally:
+      - echo "...ran cypress tests"
+
+# # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #
+
+cache:
+  paths:
+    - "node_modules/**/*"
